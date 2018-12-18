@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             x:Class="FicAppPersonas.Views.RhCatDomicilios.FicViRhCatDomiciliosList">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Name="Nuevo domicilio"
+            Command="{Binding FicMetNewCommand}"
+            >
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Editar domicilio"
+            Command="{Binding FicMetUpdateCommand}"
+            ></ToolbarItem>
+        <ToolbarItem
+            Name="Detalle domicilio"
+            Command="{Binding FicMetDetalleCommand}"
+            ></ToolbarItem>
+        <ToolbarItem 
+            Name="Borrar domicilio"
+            Clicked="FicMetDeleteCommand">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android, iOS" Value="ic_delete" />
+                    <On Platform="UWP" Value="Assets/ic_delete.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Back"
+            Command="{Binding BackNavgCommand}">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="10" Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                    <Label Text="IdPersona : " FontAttributes="Bold"/>
+                    <Label Text="{Binding Personas.IdPersona}"/>
+                </StackLayout>
+                <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                    <Label Text="NumControl : " FontAttributes="Bold"/>
+                    <Label Text="{Binding Personas.NumControl}"/>
+                </StackLayout>
+                <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                    <Label Text="Nombre : " FontAttributes="Bold"/>
+                    <Label Text="{Binding Personas.Nombre}"/>
+                </StackLayout>
+            </StackLayout>
+
+            <SearchBar   
+                HorizontalOptions="FillAndExpand"
+                Placeholder="Buscar informacion.."
+                PlaceholderColor="Red"
+                x:Name="FicSearchBar"/>
+
+            <syncfusion:SfDataGrid
+                VerticalOptions="FillAndExpand"
+                ColumnSizer="Star"
+                AutoGenerateColumns="False"
+                AllowSorting="False"
+                ItemsSource="{Binding FicSfDataGrid_ItemSource_CatEdificios}"
+                SelectedItem="{Binding FicSfDataGrid_SelectItem_CatEdificios}"
+                SelectionMode="Single"
+                x:Name="dataGrid">
+                <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
+                    <syncfusion:GridTextColumn HeaderText="IdDomicilio" MappingName="IdDomicilio" />
+                    <syncfusion:GridTextColumn HeaderText="Domicilio" MappingName="Domicilio" />
+                    <syncfusion:GridTextColumn HeaderText="EntreCalle1" MappingName="EntreCalle1" />
+                    <syncfusion:GridTextColumn HeaderText="EntreCalle2" MappingName="EntreCalle2" />
+                    <syncfusion:GridTextColumn HeaderText="CodigoPostal" MappingName="CodigoPostal" />
+                    <syncfusion:GridTextColumn HeaderText="Pais" MappingName="Pais" />
+                    <syncfusion:GridTextColumn HeaderText="Estado" MappingName="Estado" />
+                    <syncfusion:GridTextColumn HeaderText="Municipio" MappingName="Municipio" />
+                    <syncfusion:GridTextColumn HeaderText="Localidad" MappingName="Localidad" />
+
+                    <syncfusion:GridTextColumn HeaderText="Colonia" MappingName="Colonia" />
+                    <syncfusion:GridTextColumn HeaderText="Principal" MappingName="Principal" />
+                    <syncfusion:GridTextColumn HeaderText="TipoDomicilio" MappingName="TipoDomicilio" />
+                    <syncfusion:GridTextColumn HeaderText="Activo" MappingName="Activo" />
+                    <syncfusion:GridTextColumn HeaderText="Borrado" MappingName="Borrado" />
+
+                </syncfusion:SfDataGrid.Columns>
+            </syncfusion:SfDataGrid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

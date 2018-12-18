@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FicAppPersonas.Views.RhCatPersonasPerfiles.FicViRhCatPersonasPerfilesUpdate">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Name="Regresar"
+            Command="{Binding BackNavgCommand}"
+            >
+        </ToolbarItem>
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout>
+
+                <StackLayout Margin="10" Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                    <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                        <Label Text="IdPersona : " FontAttributes="Bold"/>
+                        <Label Text="{Binding Persona.IdPersona}"/>
+                    </StackLayout>
+                    <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                        <Label Text="NumControl : " FontAttributes="Bold"/>
+                        <Label Text="{Binding Persona.NumControl}"/>
+                    </StackLayout>
+                    <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                        <Label Text="Nombre : " FontAttributes="Bold"/>
+                        <Label Text="{Binding Persona.Nombre}"/>
+                    </StackLayout>
+                </StackLayout>
+
+
+                <Picker 
+                    Title="Perfil: " 
+                    ItemsSource="{Binding Picker_ItemSource_CatGenDirWeb}"
+                    ItemDisplayBinding="{Binding DesPerfil}"
+                    SelectedItem="{Binding FicSfDataGrid_SelectItem_CatGenDirWeb}" IsEnabled="False"/>
+
+                <Label Text="Usuario que modifica"/>
+                <Entry Text="{Binding Persona.UsuarioMod}"/>
+
+                <Label Text="Activo: "/>
+                <Switch IsToggled="{Binding Activo}"></Switch>
+                
+                <Label Text="Borrado: "/>
+                <Switch IsToggled="{Binding Borrado}"></Switch>
+
+                <Button Text="Registar"  Command="{Binding FicMetUpdateCommand}"/>
+                <Label Text=""/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

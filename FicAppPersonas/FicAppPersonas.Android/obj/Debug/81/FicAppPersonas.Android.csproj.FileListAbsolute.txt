@@ -1,0 +1,2 @@
+C:\Users\EL-SK\Desktop\FicAppPersonas\FicAppPersonas\FicAppPersonas\bin\Debug\netstandard2.0\FicAppPersonas.dll
+C:\Users\EL-SK\.nuget\packages\xamarin.plugin.filepicker\2.0.135\lib\MonoAndroid10\Plugin.FilePicker.dll

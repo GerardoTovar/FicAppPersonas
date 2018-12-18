@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FicAppPersonas.Views.RhCatPersonas.FicViRhCatPersonasDetail">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Name="Regresar"
+            Command="{Binding BackNavgCommand}"
+            >
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                VerticalOptions="StartAndExpand"
+                Padding="20">
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="IdPersona : "/>
+                        <Label Text="{Binding Persona.IdPersona}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Nombre : "/>
+                        <Label Text="{Binding Persona.Nombre}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Apellido paterno : "/>
+                        <Label Text="{Binding Persona.ApPaterno}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Apellido maternno : "/>
+                        <Label Text="{Binding Persona.ApMaterno}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Curp : "/>
+                        <Label Text="{Binding Persona.CURP}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Sexo : "/>
+                        <Label Text="{Binding FicSfDataGrid_SelectItem_Sexo.Valor}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Fecha de nacimiento : "/>
+                        <Label Text="{Binding Persona.FechaNac}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="RFC : "/>
+                        <Label Text="{Binding Persona.RFC}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="IdInstituto : "/>
+                        <Label Text="{Binding Persona.IdInstituto}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Instituto : "/>
+                        <Label Text="{Binding FicSfDataGrid_SelectItem_CatInstituto.DesInstituto}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Tipo de persona : "/>
+                        <Label Text="{Binding FicSfDataGrid_SelectItem_TipoPersona.Valor}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Alias : "/>
+                        <Label Text="{Binding Persona.Alias}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <!--<Image  Source="{Binding Persona.RutaFoto}" AnchorX="200" AnchorY="200"></Image>-->
+                        <Image x:Name="imagen" />
+
+                        <Label Text="Ruta : "/>
+                        <Label Text="{Binding Persona.RutaFoto}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="UsuarioReg : "/>
+                        <Label Text="{Binding Persona.UsuarioReg}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="UsuarioUltMod : "/>
+                        <Label Text="{Binding Persona.UsuarioMod}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Ocupacion : "/>
+                        <Label Text="{Binding FicSfDataGrid_SelectItem_CatGeneralesOcupacion.DesGeneral}"/>
+                    </StackLayout>
+                </StackLayout>
+
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Estado Civil : "/>
+                        <Label Text="{Binding FicSfDataGrid_SelectItem_CatGeneralesEstadoCivil.DesGeneral}"/>
+                    </StackLayout>
+                </StackLayout>
+
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Fecha de registro : "/>
+                        <Label Text="{Binding Persona.FechaReg}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Fecha de ultima modificacion : "/>
+                        <Label Text="{Binding Persona.FechaUltMod}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Fecha de registro : "/>
+                        <Label Text="{Binding Persona.FechaReg}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Activo : "/>
+                        <Label Text="{Binding Persona.Activo}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Borrado : "/>
+                        <Label Text="{Binding Persona.Borrado}"/>
+                    </StackLayout>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
+             x:Class="FicAppPersonas.Views.RhCatPersonas.FicViRhCatPersonasNew">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Name="Back"
+            Command="{Binding BackNavgCommand}">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                VerticalOptions="StartAndExpand"
+                Padding="20">
+
+                <Label Text="Instituto:"/>
+                <StackLayout VerticalOptions="Start" HorizontalOptions="Start">
+                    <syncfusion:SfAutoComplete SuggestionMode="Contains" HeightRequest="40" x:Name="autoComplete" DisplayMemberPath="DesInstituto" DataSource="{Binding Picker_ItemSource_CatInstitutos}" SelectedItem="{Binding FicSfDataGrid_SelectItem_CatInstituto}"/>
+                </StackLayout>
+
+                <Label Text="NumControl:"/>
+                <Entry Text="{Binding Persona.NumControl}" MaxLength="20"/>
+
+                <Label Text="Nombre:"/>
+                <Entry Text="{Binding Persona.Nombre}" MaxLength="100"/>
+
+                <Label Text="ApPaterno:"/>
+                <Entry Text="{Binding Persona.ApPaterno}" MaxLength="60"/>
+
+                <Label Text="ApMaterno:"/>
+                <Entry Text="{Binding Persona.ApMaterno}" MaxLength="60"/>
+
+                <Label Text="RFC:"/>
+                <Entry Text="{Binding Persona.RFC}" MaxLength="15"/>
+
+                <Label Text="CURP:"/>
+                <Entry Text="{Binding Persona.CURP}" MaxLength="25"/>
+                
+                <Picker 
+                    Title="Seleccionar sexo:" 
+                    ItemsSource="{Binding Picker_ItemSource_Sexo}"
+                    ItemDisplayBinding="{Binding Valor}"
+                    SelectedItem="{Binding FicSfDataGrid_SelectItem_Sexo}"/>
+                
+                <Label Text="FechaNa:"/>
+                <DatePicker DateSelected="DatePicker_OnDataSelected" HorizontalOptions="Start">
+                </DatePicker>
+                
+                <Picker 
+                    Title="Seleccionar tipo de persona:" 
+                    ItemsSource="{Binding Picker_ItemSource_TipoPersona}"
+                    ItemDisplayBinding="{Binding Valor}"
+                    SelectedItem="{Binding FicSfDataGrid_SelectItem_TipoPersona}"/>
+                
+                <Label Text="Ruta fotografia:"/>
+                <Button Text="Selecciona una imagen" x:Name="btnPickerImage"/>
+                <Entry IsEnabled="False" Text="{Binding Persona.RutaFoto}" x:Name="lblRuta"/>
+
+                <Picker 
+                    Title="Select ocupacion:" 
+                    ItemsSource="{Binding Picker_ItemSource_CatGeneralesOcupacion}"
+                    ItemDisplayBinding="{Binding DesGeneral}"
+                    SelectedItem="{Binding FicSfDataGrid_SelectItem_CatGeneralesOcupacion}"/>
+
+                <Picker 
+                    Title="Select estado civil:" 
+                    ItemsSource="{Binding Picker_ItemSource_CatGeneralesEstadoCivil}"
+                    ItemDisplayBinding="{Binding DesGeneral}"
+                    SelectedItem="{Binding FicSfDataGrid_SelectItem_CatGeneralesEstadoCivil}"/>
+             
+                <Label Text="Alias:"/>
+                <Entry Text="{Binding Persona.Alias}"/>
+
+                <!--<Label Text="UsuarioReg"/>
+                <Entry Text="{Binding Persona.UsuarioReg}"/>-->
+
+                <Label Text="Activo: "/>
+                <Switch IsToggled="{Binding Persona.Activo}"></Switch>
+
+                <Label Text="Borrado: "/>
+                <Switch IsToggled="{Binding Persona.Borrado}"></Switch>
+
+                <Button Text="Agregar"  Command="{Binding FicMetAddCommand}"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+    </ContentPage>

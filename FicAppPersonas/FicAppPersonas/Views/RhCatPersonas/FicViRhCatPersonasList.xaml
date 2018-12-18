@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             x:Class="FicAppPersonas.Views.RhCatPersonas.FicViRhCatPersonasList">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Name="Agregar Telefonos" Command="{Binding FicMetCatTelefonos}" />
+        <ToolbarItem  Name="Agregar DirWeb" Command="{Binding FicMetCatDirWeb}" />
+        <ToolbarItem  Name="Agregar Domicilios" Command="{Binding FicMetCatDomicilios}" />
+        <ToolbarItem  Name="Agregar Institutos Personas" Command="{Binding FicMetCatInstitutosPersonas}" />
+        <ToolbarItem  Name="Agregar Datos Adicionales" Command="{Binding FicMetCatDatosAdicionales}" />
+        <ToolbarItem  Name="Agregar Perfil" Command="{Binding FicMetCatPersonasPerfiles}" />
+        <ToolbarItem  Name="Agregar Empleado" Command="{Binding FicMetCatEmpleado}" />
+        <ToolbarItem  Name="Agregar Catedratico" Command="{Binding FicMetCatCatedratico}" />
+        <ToolbarItem  Name="Agregar Cliente" Command="{Binding FicMetCatCliente}" />
+        <ToolbarItem  Name="Agregar Alumnos" Command="{Binding FicMetCatAlumnos}" />
+        <ToolbarItem 
+            Name="Nuevo Persona"
+            Command="{Binding FicMetNewCommand}"
+            >
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Editar Persona"
+            Command="{Binding FicMetUpdateCommand}"
+            ></ToolbarItem>
+        <ToolbarItem
+            Name="Detalle Persona"
+            Command="{Binding FicMetDetalleCommand}"
+            ></ToolbarItem>
+        <ToolbarItem 
+            Name="Borrar Persona"
+            Clicked="FicMetDeleteCommand">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android, iOS" Value="ic_delete" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+        <ContentPage.Content>
+            <ScrollView>
+
+                <StackLayout>
+
+                    <SearchBar   
+                HorizontalOptions="FillAndExpand"
+                Placeholder="Buscar informacion.."
+                PlaceholderColor="Red"
+                x:Name="FicSearchBar"/>
+
+                    <syncfusion:SfDataGrid
+                VerticalOptions="FillAndExpand"
+                ColumnSizer="Star"
+                AutoGenerateColumns="False"
+                AllowSorting="False"
+                ItemsSource="{Binding FicSfDataGrid_ItemSource_CatPersonas}"
+                SelectedItem="{Binding FicSfDataGrid_SelectItem_CatPersonas}"
+                SelectionMode="Single"
+                x:Name="dataGrid">
+                    <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
+                        <syncfusion:GridTextColumn HeaderText="IdPersona" MappingName="IdPersona" />
+                        <syncfusion:GridTextColumn HeaderText="IdInstituto" MappingName="IdInstituto" />
+                        <syncfusion:GridTextColumn HeaderText="Nombre" MappingName="Nombre" />
+                        <syncfusion:GridTextColumn HeaderText="ApPaterno" MappingName="ApPaterno" />
+                        <syncfusion:GridTextColumn HeaderText="ApMaterno" MappingName="ApMaterno" />
+                        <syncfusion:GridTextColumn HeaderText="NumControl" MappingName="NumControl" />
+                        <syncfusion:GridTextColumn HeaderText="Alias" MappingName="Alias" />
+                        <syncfusion:GridTextColumn HeaderText="FechaNac" MappingName="FechaNac" />
+                        <syncfusion:GridTextColumn HeaderText="TipoPer" MappingName="TipoPersona" />
+                        <syncfusion:GridTextColumn HeaderText="Sexo" MappingName="Sexo" />
+                        <syncfusion:GridTextColumn HeaderText="Activo" MappingName="Activo" />
+                    </syncfusion:SfDataGrid.Columns>
+                    </syncfusion:SfDataGrid>
+
+                </StackLayout>
+            </ScrollView>
+        </ContentPage.Content>
+    </ContentPage>

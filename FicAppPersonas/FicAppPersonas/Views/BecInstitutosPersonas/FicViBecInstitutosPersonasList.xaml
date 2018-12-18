@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             x:Class="FicAppPersonas.Views.BecInstitutosPersonas.FicViBecInstitutosPersonasList">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Name="Nuevo institutos"
+            Command="{Binding FicMetNewCommand}"
+            >
+        </ToolbarItem>
+        <ToolbarItem
+            Name="Editar institutos"
+            Command="{Binding FicMetUpdateCommand}"
+            ></ToolbarItem>
+        <ToolbarItem
+            Name="Detalle institutos"
+            Command="{Binding FicMetDetalleCommand}"
+            ></ToolbarItem>
+        <ToolbarItem 
+            Name="Borrar institutos"
+            Clicked="FicMetDeleteCommand">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android, iOS" Value="ic_delete" />
+                    <On Platform="UWP" Value="Assets/ic_delete.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem 
+            Name="Regresar"
+            Command="{Binding BackNavgCommand}"
+            >
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="10" Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                    <Label Text="IdPersona : " FontAttributes="Bold"/>
+                    <Label Text="{Binding Edificio.IdPersona}"/>
+                </StackLayout>
+                <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                    <Label Text="NumControl : " FontAttributes="Bold"/>
+                    <Label Text="{Binding Edificio.NumControl}"/>
+                </StackLayout>
+                <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                    <Label Text="Nombre : " FontAttributes="Bold"/>
+                    <Label Text="{Binding Edificio.Nombre}"/>
+                </StackLayout>
+            </StackLayout>
+
+            <SearchBar   
+                HorizontalOptions="FillAndExpand"
+                Placeholder="Buscar informacion.."
+                PlaceholderColor="Red"
+                x:Name="FicSearchBar"/>
+
+            <syncfusion:SfDataGrid
+                VerticalOptions="FillAndExpand"
+                ColumnSizer="Star"
+                AutoGenerateColumns="False"
+                AllowSorting="False"
+                ItemsSource="{Binding FicSfDataGrid_ItemSource_CatEdificios2}"
+                SelectedItem="{Binding FicSfDataGrid_SelectItem_CatEdificios2}"
+                SelectionMode="Single"
+                x:Name="dataGrid">
+                <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
+                    <syncfusion:GridTextColumn HeaderText="Instituto" MappingName="Instituto" />
+                    <syncfusion:GridTextColumn HeaderText="Perfil" MappingName="Perfil" />
+                    <syncfusion:GridTextColumn HeaderText="FechaUltMod" MappingName="FechaUltMod" />
+                    <syncfusion:GridTextColumn HeaderText="Activo" MappingName="Activo" />
+                    <syncfusion:GridTextColumn HeaderText="Borrado" MappingName="Borrado" />
+                </syncfusion:SfDataGrid.Columns>
+            </syncfusion:SfDataGrid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

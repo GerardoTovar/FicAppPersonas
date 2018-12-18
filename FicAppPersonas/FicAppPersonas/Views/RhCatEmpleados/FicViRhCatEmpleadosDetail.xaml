@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FicAppPersonas.Views.RhCatEmpleados.FicViRhCatEmpleadosDetail">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Name="Regresar"
+            Command="{Binding BackNavgCommand}"
+            >
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                VerticalOptions="StartAndExpand"
+                Padding="20">
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="IdEmpleado : "/>
+                        <Label Text="{Binding Empleados.IdEmpleado}"/>
+                    </StackLayout>
+                </StackLayout>
+
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Numero de control : "/>
+                        <Label Text="{Binding Empleados.NumControl}"/>
+                    </StackLayout>
+                </StackLayout>
+
+             
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Fecha de registro : "/>
+                        <Label Text="{Binding Empleados.FechaReg}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Fecha de ultima modificacion : "/>
+                        <Label Text="{Binding Empleados.FechaUltMod}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Usuario que lo registro : "/>
+                        <Label Text="{Binding Empleados.UsuarioReg}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="ultimo usuario que modifico : "/>
+                        <Label Text="{Binding Empleados.UsuarioMod}"/>
+                    </StackLayout>
+                </StackLayout>
+
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Activo : "/>
+                        <Label  Text="{Binding Empleados.Activo}"></Label>
+                    </StackLayout>
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Borrado : "/>
+                        <Label  Text="{Binding Empleados.Borrado}"></Label>
+                    </StackLayout>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

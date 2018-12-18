@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FicAppPersonas.Views.RhCatAlumnos.FicViRhCatAlumnosDetail">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Name="Back"
+            Command="{Binding BackNavgCommand}">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                VerticalOptions="StartAndExpand"
+                Padding="20">
+
+                <StackLayout Margin="10" Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                    <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                        <Label Text="IdPersona : " FontAttributes="Bold"/>
+                        <Label Text="{Binding Persona.IdPersona}"/>
+                    </StackLayout>
+                    <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                        <Label Text="NumControl : " FontAttributes="Bold"/>
+                        <Label Text="{Binding Persona.NumControl}"/>
+                    </StackLayout>
+                    <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                        <Label Text="Nombre : " FontAttributes="Bold"/>
+                        <Label Text="{Binding Persona.Nombre}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="IdAlumno : "/>
+                        <Label Text="{Binding Alumnos.IdAlumno}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Numero de control : "/>
+                        <Label Text="{Binding Alumnos.NumControl}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Carrera : "/>
+                        <Label Text="{Binding FicSfDataGrid_SelectItem_CatGeneralesEstadoCivil.DesCarrera}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Fecha de registro : "/>
+                        <Label Text="{Binding Alumnos.FechaReg}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Fecha de ultima modificacion : "/>
+                        <Label Text="{Binding Alumnos.FechaUltMod}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Usuario que lo registro : "/>
+                        <Label Text="{Binding Alumnos.UsuarioReg}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="ultimo usuario que modifico : "/>
+                        <Label Text="{Binding Alumnos.UsuarioMod}"/>
+                    </StackLayout>
+                </StackLayout>
+
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Activo : "/>
+                        <Label Text="{Binding Alumnos.Activo}"></Label>
+                    </StackLayout>
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Borrado : "/>
+                        <Label Text="{Binding Alumnos.Borrado}"></Label>
+                    </StackLayout>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

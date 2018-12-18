@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
+             x:Class="FicAppPersonas.Views.RhCatDomicilios.FicViRhCatDomiciliosUpdate">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Name="Back"
+            Command="{Binding BackNavgCommand}">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                VerticalOptions="StartAndExpand"
+                Padding="20">
+
+                <StackLayout Margin="10" Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                    <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                        <Label Text="IdPersona : " FontAttributes="Bold"/>
+                        <Label Text="{Binding Persona.IdPersona}"/>
+                    </StackLayout>
+                    <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                        <Label Text="NumControl : " FontAttributes="Bold"/>
+                        <Label Text="{Binding Persona.NumControl}"/>
+                    </StackLayout>
+                    <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                        <Label Text="Nombre : " FontAttributes="Bold"/>
+                        <Label Text="{Binding Persona.Nombre}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <!--<Label Text="IdDomicilio"/>
+                <Entry Text="{Binding Domicilio.IdDomicilio}" IsEnabled="False"/>-->
+
+                <Label Text="Domicilio "/>
+                <Entry Text="{Binding Domicilio.Domicilio}"/>
+
+                <Label Text="Entre calle 1 "/>
+                <Entry Text="{Binding Domicilio.EntreCalle1}"/>
+
+                <Label Text="Entre calle 2 "/>
+                <Entry Text="{Binding Domicilio.EntreCalle2}"/>
+
+                <Label Text="codigo postal "/>
+                <Entry Text="{Binding Domicilio.CodigoPostal}"/>
+
+                <Label Text="coordenadas "/>
+                <Entry Text="{Binding Domicilio.Coordenadas}"/>
+
+                <Label Text="Principal: "/>
+                <Switch IsToggled="{Binding Principal}"></Switch>
+
+                <Picker 
+                    Title="GenDomicilio" 
+                    ItemsSource="{Binding Picker_ItemSource_CatGeneralesDomicilio}"
+                    ItemDisplayBinding="{Binding DesGeneral}"
+                    SelectedItem="{Binding FicSfDataGrid_SelectItem_CatGeneralesDomicilio}"/>
+
+                <Label Text="Pais:"/>
+                <StackLayout VerticalOptions="Start" HorizontalOptions="Start">
+                    <syncfusion:SfAutoComplete SuggestionMode="Contains" HeightRequest="40" x:Name="autoComplete" 
+                                               DisplayMemberPath="DesPais" 
+                                               DataSource="{Binding Picker_ItemSource_CatPaises}" 
+                                               SelectedItem="{Binding FicSfDataGrid_SelectItem_CatPais}"/>
+                </StackLayout>
+                <Label Text="Estado:"/>
+                <StackLayout VerticalOptions="Start" HorizontalOptions="Start">
+                    <syncfusion:SfAutoComplete SuggestionMode="Contains" HeightRequest="40" x:Name="autoComplete2" 
+                                               DisplayMemberPath="DesEstado" 
+                                               DataSource="{Binding Picker_ItemSource_CatEstado}" 
+                                               SelectedItem="{Binding FicSfDataGrid_SelectItem_CatEstado}"/>
+                </StackLayout>
+                <Label Text="Municipio:"/>
+                <StackLayout VerticalOptions="Start" HorizontalOptions="Start">
+                    <syncfusion:SfAutoComplete SuggestionMode="Contains" HeightRequest="40" x:Name="autoComplete3" 
+                                               DisplayMemberPath="DesMunicipio" 
+                                               DataSource="{Binding Picker_ItemSource_CatMunicipio}" 
+                                               SelectedItem="{Binding FicSfDataGrid_SelectItem_CatMunicipio}"/>
+                </StackLayout>
+                <Label Text="Localida:"/>
+                <StackLayout VerticalOptions="Start" HorizontalOptions="Start">
+                    <syncfusion:SfAutoComplete SuggestionMode="Contains" HeightRequest="40" x:Name="autoComplete4" 
+                                               DisplayMemberPath="DesLocalidad" 
+                                               DataSource="{Binding Picker_ItemSource_CatLocalidad}" 
+                                               SelectedItem="{Binding FicSfDataGrid_SelectItem_CatLocalidad}"/>
+                </StackLayout>
+                <Label Text="Colonia:"/>
+                <StackLayout VerticalOptions="Start" HorizontalOptions="Start">
+                    <syncfusion:SfAutoComplete SuggestionMode="Contains" HeightRequest="40" x:Name="autoComplete5" 
+                                               DisplayMemberPath="DesColonia" 
+                                               DataSource="{Binding Picker_ItemSource_CatColonia}" 
+                                               SelectedItem="{Binding FicSfDataGrid_SelectItem_CatColonia}"/>
+                </StackLayout>
+
+                <Label Text="TipoDomicilio: "/>
+                <Switch IsToggled="{Binding TipoDomicilio}"></Switch>
+
+                <Label Text="Activo: "/>
+                <Switch IsToggled="{Binding Activo}"></Switch>
+
+                <Label Text="Borrado: "/>
+                <Switch IsToggled="{Binding Borrado}"></Switch>
+
+
+                <Button Text="Agregar"  Command="{Binding FicMetAddCommand}"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

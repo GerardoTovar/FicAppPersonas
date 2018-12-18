@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             x:Class="FicAppPersonas.Views.RhCatTelefonos.FicViRhCatTelefonosDetail">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Name="Regresar"
+            Command="{Binding BackNavgCommand}"
+            >
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                VerticalOptions="StartAndExpand"
+                Padding="20">
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="IdTelefono: "/>
+                        <Label Text="{Binding Telefono.IdTelefono}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Codigo del pais: "/>
+                        <Label Text="{Binding Telefono.CodPais}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Numero de telefono : "/>
+                        <Label Text="{Binding Telefono.NumTelefono}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Num. extencion : "/>
+                        <Label Text="{Binding Telefono.NumExtension}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Principal : "/>
+                        <Label Text="{Binding Telefono.Principal}"/>
+                    </StackLayout>
+                </StackLayout>
+                
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Tipo de telefono: : "/>
+                        <Label Text="{Binding Picker_SelectItem_CatGenTelefono.DesGeneral}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Clave de referencia : "/>
+                        <Label Text="{Binding Telefono.ClaveReferencia}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Referencia : "/>
+                        <Label Text="{Binding Telefono.Referencia}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Fecha de registro : "/>
+                        <Label Text="{Binding Telefono.FechaReg}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Fecha de ultima modificacion : "/>
+                        <Label Text="{Binding Telefono.FechaUltMod}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Usuario que lo registro : "/>
+                        <Label Text="{Binding Telefono.UsuarioReg}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="ultimo usuario que modifico : "/>
+                        <Label Text="{Binding Telefono.UsuarioMod}"/>
+                    </StackLayout>
+                </StackLayout>
+
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Activo : "/>
+                        <Label Text="{Binding Telefono.Activo}"></Label>
+                    </StackLayout>
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Borrado : "/>
+                        <Label Text="{Binding Telefono.Borrado}"></Label>
+                    </StackLayout>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

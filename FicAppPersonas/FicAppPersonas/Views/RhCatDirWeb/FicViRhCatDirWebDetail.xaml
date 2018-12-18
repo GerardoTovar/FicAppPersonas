@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             x:Class="FicAppPersonas.Views.RhCatDirWeb.FicViRhCatDirWebDetail">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Name="Regresar"
+            Command="{Binding BackNavgCommand}"
+            >
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                VerticalOptions="StartAndExpand"
+                Padding="20">
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="IdDirWeb : "/>
+                        <Label Text="{Binding DirWeb.IdDirWeb}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Descripcion de direccion web : "/>
+                        <Label Text="{Binding DirWeb.DesDirWeb}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Direccion web : "/>
+                        <Label Text="{Binding DirWeb.DireccionWeb}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Principal : "/>
+                        <Label Text="{Binding DirWeb.Principal}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Tipo de direccion web : "/>
+                        <Label Text="{Binding FicSfDataGrid_SelectItem_CatGenDirWeb.DesGeneral}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Clave de referencia : "/>
+                        <Label Text="{Binding DirWeb.ClaveReferencia}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Referencia : "/>
+                        <Label Text="{Binding DirWeb.Referencia}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Fecha de registro : "/>
+                        <Label Text="{Binding DirWeb.FechaReg}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Fecha de ultima modificacion : "/>
+                        <Label Text="{Binding DirWeb.FechaUltMod}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Usuario que lo registro : "/>
+                        <Label Text="{Binding DirWeb.UsuarioReg}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="ultimo usuario que modifico : "/>
+                        <Label Text="{Binding DirWeb.UsuarioMod}"/>
+                    </StackLayout>
+                </StackLayout>
+
+
+                <StackLayout Padding="2" Orientation="Vertical">
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Activo : "/>
+                        <Label  Text="{Binding DirWeb.Activo}"></Label>
+                    </StackLayout>
+                    <StackLayout Padding="10" Orientation="Horizontal" VerticalOptions="End"  HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                        <Label Text="Borrado : "/>
+                        <Label  Text="{Binding DirWeb.Borrado}"></Label>
+                    </StackLayout>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

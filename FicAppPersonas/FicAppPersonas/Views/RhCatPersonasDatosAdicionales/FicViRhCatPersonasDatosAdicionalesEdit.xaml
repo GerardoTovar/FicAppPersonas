@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             x:Class="FicAppPersonas.Views.RhCatPersonasDatosAdicionales.FicViRhCatPersonasDatosAdicionalesEdit">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Name="Regresar"
+            Command="{Binding BackNavgCommand}"
+            >
+        </ToolbarItem>
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout>
+
+                <StackLayout Margin="10" Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                    <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                        <Label Text="IdPersona : " FontAttributes="Bold"/>
+                        <Label Text="{Binding Persona.IdPersona}"/>
+                    </StackLayout>
+                    <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                        <Label Text="NumControl : " FontAttributes="Bold"/>
+                        <Label Text="{Binding Persona.NumControl}"/>
+                    </StackLayout>
+                    <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                        <Label Text="Nombre : " FontAttributes="Bold"/>
+                        <Label Text="{Binding Persona.Nombre}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                    <Label Text="IdDatoAdicional : " FontAttributes="Bold"/>
+                    <Label Text="{Binding Edificio.IdDatoAdicional}"/>
+                </StackLayout>
+                
+                <Label Text="Etiqueta"/>
+                <Entry Text="{Binding Edificio.Etiqueta}"/>
+                <Label Text="Valor"/>
+                <Entry Text="{Binding Edificio.Valor}"/>
+
+                <Picker 
+                    Title="Tipo de seccion:" 
+                    ItemsSource="{Binding Picker_ItemSource_CatGenDirWeb}"
+                    ItemDisplayBinding="{Binding DesGeneral}"
+                    SelectedItem="{Binding FicSfDataGrid_SelectItem_CatGenDirWeb}"/>
+
+                <Label Text="Activo: "/>
+                <Switch IsToggled="{Binding Activo}"></Switch>
+                
+                <Label Text="Borrado: "/>
+                <Switch IsToggled="{Binding Borrado}"></Switch>
+
+                <Button Text="Editar"  Command="{Binding FicMetAddCommand}"/>
+                <Label Text=""/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+    
+    
+    
+    
+    
+    

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FicAppPersonas.Views.RhCatTelefonos.FicViRhCatTelefonosNew">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Name="Back"
+            Command="{Binding BackNavgCommand}">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout                                              
+                VerticalOptions="StartAndExpand"
+                Padding="20">
+
+                <StackLayout Margin="10" Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                    <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                        <Label Text="IdPersona : " FontAttributes="Bold"/>
+                        <Label Text="{Binding Persona.IdPersona}"/>
+                    </StackLayout>
+                    <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                        <Label Text="NumControl : " FontAttributes="Bold"/>
+                        <Label Text="{Binding Persona.NumControl}"/>
+                    </StackLayout>
+                    <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                        <Label Text="Nombre : " FontAttributes="Bold"/>
+                        <Label Text="{Binding Persona.Nombre}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <Label Text="CodPais:"/>
+                <Entry Text="{Binding Telefono.CodPais}" MaxLength="2"/>
+
+                <Label Text="Num. tel.:"/>
+                <Entry Text="{Binding Telefono.NumTelefono}" MaxLength="20"/>
+
+                <Label Text="Num. ext.:"/>
+                <Entry Text="{Binding Telefono.NumExtension}" MaxLength="30"/>
+                
+                <Label Text="Principal:"/>
+                <Switch IsToggled="{Binding Telefono.Principal}"></Switch>
+
+                <Picker 
+                    Title="Tipo de telefono:" 
+                    ItemsSource="{Binding Picker_ItemSource_CatGenTelefonos}"
+                    ItemDisplayBinding="{Binding DesGeneral}"
+                    SelectedItem="{Binding Picker_SelectItem_CatGenTelefono}"/>
+
+                <Label Text="Activo:"/>
+                <Switch IsToggled="{Binding Telefono.Activo}"></Switch>
+
+                    <Label Text="Borrado: "/>
+                <Switch IsToggled="{Binding Telefono.Borrado}"></Switch>
+
+                <Button Text="Agregar"  Command="{Binding FicMetAddCommand}"/>
+
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

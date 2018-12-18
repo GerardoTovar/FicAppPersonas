@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
+             x:Class="FicAppPersonas.Views.RhCatAlumnos.FicViRhCatAlumnosUpdate">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Name="Back"
+            Command="{Binding BackNavgCommand}">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                VerticalOptions="StartAndExpand"
+                Padding="20">
+                <StackLayout Margin="10" Padding="10" Orientation="Vertical" HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                    <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                        <Label Text="IdPersona : " FontAttributes="Bold"/>
+                        <Label Text="{Binding Persona.IdPersona}"/>
+                    </StackLayout>
+                    <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                        <Label Text="NumControl : " FontAttributes="Bold"/>
+                        <Label Text="{Binding Persona.NumControl}"/>
+                    </StackLayout>
+                    <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                        <Label Text="Nombre : " FontAttributes="Bold"/>
+                        <Label Text="{Binding Persona.Nombre}"/>
+                    </StackLayout>
+                </StackLayout>
+                <!--<Label Text="IdAlumno"/>
+                <Entry Text="{Binding Alumnos.IdAlumno}" IsEnabled="False"/>-->
+
+                <Label Text="Numero de Control"/>
+                <Entry Text="{Binding Alumnos.NumControl}"/>
+
+                <Label Text="Carrera:"/>
+                <StackLayout VerticalOptions="Start" HorizontalOptions="Start">
+                    <syncfusion:SfAutoComplete SuggestionMode="Contains" HeightRequest="40" x:Name="autoComplete" DisplayMemberPath="DesCarrera" DataSource="{Binding Picker_ItemSource_CatGeneralesEstadoCivil}" SelectedItem="{Binding FicSfDataGrid_SelectItem_CatGeneralesEstadoCivil}"/>
+                </StackLayout>
+
+                <Label Text="Activo: "/>
+                <Switch IsToggled="{Binding Activo}"></Switch>
+
+                <Label Text="Borrado: "/>
+                <Switch IsToggled="{Binding Borrado}"></Switch>
+
+                <Button Text="Agregar"  Command="{Binding FicMetUpdateCommand}"/>
+
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>
